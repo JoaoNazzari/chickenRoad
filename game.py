@@ -119,3 +119,15 @@ def jogar():
                 jogando=False
                 pygame.mixer.music.stop()
                 pygame.mixer.Sound.play(batidaSound)
+
+        if galinhaY < 65 and galinhaX < 1040  and  galinhaX > 860 :
+                pontos += 1
+                velocidadeCar += 3
+                galinhaX = 940
+                galinhaY = 1010
+
+
+        pygameDisplay.update()
+        clock.tick(60)
+
+jogar()
