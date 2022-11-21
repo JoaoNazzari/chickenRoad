@@ -5,3 +5,5 @@ Game desenvolvido em Pygame como proposta de projeto acadêmico da disciplina de
 
 Atitus - 1º Semestre Ciências da Computação 
 
+ChickenRoad é um jogo simples e divertido. Seu objetivo como galinha é atravessar as ruas movimentadas e chegar em seus pintinhos para pontuar.
+Se desafie  a pontuar o maior número de vezes possíveis enquanto os carros no seu caminho ficam cada vez mais velozes.
