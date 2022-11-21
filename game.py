@@ -157,100 +157,100 @@ def jogar():
             else:
                 posicaoCarX6 =posicaoCarX6 + velocidadeCar6
 
-        if galinhaX + movimentoGalinhaX + larguraGalinha < largura and galinhaX + movimentoGalinhaX > 0:
+            if galinhaX + movimentoGalinhaX + larguraGalinha < largura and galinhaX + movimentoGalinhaX > 0:
                 galinhaX = galinhaX + movimentoGalinhaX
 
-        if galinhaY + movimentoGalinhaY + alturaGalinha < altura and galinhaY + movimentoGalinhaY > 0:
-            galinhaY = galinhaY + movimentoGalinhaY
-        gameDisplay.fill(branco)
-        gameDisplay.blit(fundo,(0,0))
-        gameDisplay.blit(galinha, (galinhaX,galinhaY))
+            if galinhaY + movimentoGalinhaY + alturaGalinha < altura and galinhaY + movimentoGalinhaY > 0:
+                galinhaY = galinhaY + movimentoGalinhaY
+            gameDisplay.fill(branco)
+            gameDisplay.blit(fundo,(0,0))
+            gameDisplay.blit(galinha, (galinhaX,galinhaY))
             
-        gameDisplay.blit(carAzul, (posicaoCarX,posicaoCarY))
-        gameDisplay.blit(carAzul2, (posicaoCarX2,posicaoCarY2))
-        gameDisplay.blit(carAzul3, (posicaoCarX3,posicaoCarY3))
-        gameDisplay.blit(carAzul4, (posicaoCarX4,posicaoCarY4))
-        gameDisplay.blit(carAzul5, (posicaoCarX5,posicaoCarY5))
-        gameDisplay.blit(carAzul6, (posicaoCarX6,posicaoCarY6))
-        escreverTexto("Pontos: "+str(pontos))
+            gameDisplay.blit(carAzul, (posicaoCarX,posicaoCarY))
+            gameDisplay.blit(carAzul2, (posicaoCarX2,posicaoCarY2))
+            gameDisplay.blit(carAzul3, (posicaoCarX3,posicaoCarY3))
+            gameDisplay.blit(carAzul4, (posicaoCarX4,posicaoCarY4))
+            gameDisplay.blit(carAzul5, (posicaoCarX5,posicaoCarY5))
+            gameDisplay.blit(carAzul6, (posicaoCarX6,posicaoCarY6))
+            escreverTexto("Pontos: "+str(pontos))
 
-        pixelXGalinha = list(range(galinhaX, galinhaX+larguraGalinha))
-        pixelYGalinha = list(range(galinhaY, galinhaY+alturaGalinha))
+            pixelXGalinha = list(range(galinhaX, galinhaX+larguraGalinha))
+            pixelYGalinha = list(range(galinhaY, galinhaY+alturaGalinha))
 
-        pixelXCar = list(range(posicaoCarX, posicaoCarX+larguraCar))
-        pixelYCar = list(range(posicaoCarY, posicaoCarY+alturaCar))
-        pixelXCar2 = list(range(posicaoCarX2, posicaoCarX2+larguraCar2))
-        pixelYCar2 = list(range(posicaoCarY2, posicaoCarY2+alturaCar2))
-        pixelXcar3 = list(range(posicaoCarX3, posicaoCarX3+larguraCar3))                    
-        pixelYcar3 = list(range(posicaoCarY3, posicaoCarY3+alturacar3))      
-        pixelXcar4 = list(range(posicaoCarX4, posicaoCarX4+larguraCar4))                    
-        pixelYcar4 = list(range(posicaoCarY4, posicaoCarY4+alturaCar4))            
-        pixelXcar5 = list(range(posicaoCarX5, posicaoCarX5+larguraCar5))                   
-        pixelYcar5 = list(range(posicaoCarY5, posicaoCarY5+alturaCar5))        
-        pixelXcar6 = list(range(posicaoCarX6, posicaoCarX6+larguraCar6))                   
-        pixelYcar6 = list(range(posicaoCarY6, posicaoCarY6+alturaCar6)) 
+            pixelXCar = list(range(posicaoCarX, posicaoCarX+larguraCar))
+            pixelYCar = list(range(posicaoCarY, posicaoCarY+alturaCar))
+            pixelXCar2 = list(range(posicaoCarX2, posicaoCarX2+larguraCar2))
+            pixelYCar2 = list(range(posicaoCarY2, posicaoCarY2+alturaCar2))
+            pixelXcar3 = list(range(posicaoCarX3, posicaoCarX3+larguraCar3))                    
+            pixelYcar3 = list(range(posicaoCarY3, posicaoCarY3+alturacar3))      
+            pixelXcar4 = list(range(posicaoCarX4, posicaoCarX4+larguraCar4))                    
+            pixelYcar4 = list(range(posicaoCarY4, posicaoCarY4+alturaCar4))            
+            pixelXcar5 = list(range(posicaoCarX5, posicaoCarX5+larguraCar5))                   
+            pixelYcar5 = list(range(posicaoCarY5, posicaoCarY5+alturaCar5))        
+            pixelXcar6 = list(range(posicaoCarX6, posicaoCarX6+larguraCar6))                   
+            pixelYcar6 = list(range(posicaoCarY6, posicaoCarY6+alturaCar6)) 
 
-        colisaoY = len(list(set(pixelYCar) & set(pixelYGalinha) ))
-        if colisaoY > 0:
-            colisaoX = len(list(set(pixelXCar) & set(pixelXGalinha) ))
-            print(colisaoX)
-            if colisaoX > 60:
-                morreu()
-                jogando=False
-                pygame.mixer.music.stop()
-                pygame.mixer.Sound.play(batidaSound)
+            colisaoY = len(list(set(pixelYCar) & set(pixelYGalinha) ))
+            if colisaoY > 0:
+                colisaoX = len(list(set(pixelXCar) & set(pixelXGalinha) ))
+                print(colisaoX)
+                if colisaoX > 60:
+                    morreu()
+                    jogando=False
+                    pygame.mixer.music.stop()
+                    pygame.mixer.Sound.play(batidaSound)
 
-        colisaoY2 = len(list(set(pixelYCar2) & set(pixelYGalinha) ))
-        if colisaoY2 > 0:
-            colisaoX2 = len(list(set(pixelXCar2) & set(pixelXGalinha) ))
-            print(colisaoX2)
-            if colisaoX2 > 60:
-                morreu()
-                jogando=False
-                pygame.mixer.music.stop()
-                pygame.mixer.Sound.play(batidaSound)
+            colisaoY2 = len(list(set(pixelYCar2) & set(pixelYGalinha) ))
+            if colisaoY2 > 0:
+                colisaoX2 = len(list(set(pixelXCar2) & set(pixelXGalinha) ))
+                print(colisaoX2)
+                if colisaoX2 > 60:
+                    morreu()
+                    jogando=False
+                    pygame.mixer.music.stop()
+                    pygame.mixer.Sound.play(batidaSound)
 
-        colisaoY3 = len(list(set(pixelYcar3) & set(pixelYGalinha) ))                        
-        if colisaoY3 > 0:
-            colisaoX3 = len(list(set(pixelXcar3) & set(pixelXGalinha) ))                    
-            print(colisaoX3)
-            if colisaoX3 > 60:
-                morreu()
-                jogando=False
-                pygame.mixer.music.stop()
-                pygame.mixer.Sound.play(batidaSound)
+            colisaoY3 = len(list(set(pixelYcar3) & set(pixelYGalinha) ))                        
+            if colisaoY3 > 0:
+                colisaoX3 = len(list(set(pixelXcar3) & set(pixelXGalinha) ))                    
+                print(colisaoX3)
+                if colisaoX3 > 60:
+                    morreu()
+                    jogando=False
+                    pygame.mixer.music.stop()
+                    pygame.mixer.Sound.play(batidaSound)
             
-        colisaoY4 = len(list(set(pixelYcar4) & set(pixelYGalinha) ))                       
-        if colisaoY4 > 0:
-            colisaoX4 = len(list(set(pixelXcar4) & set(pixelXGalinha) ))                    
-            print(colisaoX4)
-            if colisaoX4 > 60:
-                morreu()
-                jogando=False
-                pygame.mixer.music.stop()
-                pygame.mixer.Sound.play(batidaSound)
+            colisaoY4 = len(list(set(pixelYcar4) & set(pixelYGalinha) ))                       
+            if colisaoY4 > 0:
+                colisaoX4 = len(list(set(pixelXcar4) & set(pixelXGalinha) ))                    
+                print(colisaoX4)
+                if colisaoX4 > 60:
+                    morreu()
+                    jogando=False
+                    pygame.mixer.music.stop()
+                    pygame.mixer.Sound.play(batidaSound)
 
-        colisaoY5 = len(list(set(pixelYcar5) & set(pixelYGalinha) ))                        
-        if colisaoY5 > 0:
-            colisaoX5 = len(list(set(pixelXcar5) & set(pixelXGalinha) ))                    
-            print(colisaoX5)
-            if colisaoX5 > 60:
-                morreu()
-                jogando=False
-                pygame.mixer.music.stop()
-                pygame.mixer.Sound.play(batidaSound)
+            colisaoY5 = len(list(set(pixelYcar5) & set(pixelYGalinha) ))                        
+            if colisaoY5 > 0:
+                colisaoX5 = len(list(set(pixelXcar5) & set(pixelXGalinha) ))                    
+                print(colisaoX5)
+                if colisaoX5 > 60:
+                    morreu()
+                    jogando=False
+                    pygame.mixer.music.stop()
+                    pygame.mixer.Sound.play(batidaSound)
 
-        colisaoY6 = len(list(set(pixelYcar6) & set(pixelYGalinha) ))                        
-        if colisaoY6 > 0:
-            colisaoX6 = len(list(set(pixelXcar6) & set(pixelXGalinha) ))                    
-            print(colisaoX6)
-            if colisaoX6 > 60:
-                morreu()
-                jogando=False
-                pygame.mixer.music.stop()
-                pygame.mixer.Sound.play(batidaSound)
+            colisaoY6 = len(list(set(pixelYcar6) & set(pixelYGalinha) ))                        
+            if colisaoY6 > 0:
+                colisaoX6 = len(list(set(pixelXcar6) & set(pixelXGalinha) ))                    
+                print(colisaoX6)
+                if colisaoX6 > 60:
+                    morreu()
+                    jogando=False
+                    pygame.mixer.music.stop()
+                    pygame.mixer.Sound.play(batidaSound)
 
-        if galinhaY < 65 and galinhaX < 1040  and  galinhaX > 860 :
+            if galinhaY < 65 and galinhaX < 1040  and  galinhaX > 860 :
                 pontos += 1
                 velocidadeCar += 3
                 velocidadeCar2 += 3
