@@ -92,3 +92,30 @@ def jogar():
                 pygame.mixer.Sound.play(carSound)
             else:
                 posicaoCarX =posicaoCarX + velocidadeCar
+
+        if galinhaX + movimentoGalinhaX + larguraGalinha < largura and galinhaX + movimentoGalinhaX > 0:
+                galinhaX = galinhaX + movimentoGalinhaX
+
+        if galinhaY + movimentoGalinhaY + alturaGalinha < altura and galinhaY + movimentoGalinhaY > 0:
+            galinhaY = galinhaY + movimentoGalinhaY
+        gameDisplay.fill(branco)
+        gameDisplay.blit(fundo,(0,0))
+        gameDisplay.blit(galinha, (galinhaX,galinhaY))
+            
+        gameDisplay.blit(carAzul, (posicaoCarX,posicaoCarY))
+
+        pixelXGalinha = list(range(galinhaX, galinhaX+larguraGalinha))
+        pixelYGalinha = list(range(galinhaY, galinhaY+alturaGalinha))
+
+        pixelXCar = list(range(posicaoCarX, posicaoCarX+larguraCar))
+        pixelYCar = list(range(posicaoCarY, posicaoCarY+alturaCar))
+
+        colisaoY = len(list(set(pixelYCar) & set(pixelYGalinha) ))
+        if colisaoY > 0:
+            colisaoX = len(list(set(pixelXCar) & set(pixelXGalinha) ))
+            print(colisaoX)
+            if colisaoX > 60:
+                morreu()
+                jogando=False
+                pygame.mixer.music.stop()
+                pygame.mixer.Sound.play(batidaSound)
