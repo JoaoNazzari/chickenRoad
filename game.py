@@ -14,7 +14,12 @@ gameEvents = pygame.event
 branco = (255,255,255)
 fundo = pygame.image.load("assets/fundoRodovia.png")                    
 galinha = pygame.image.load("assets/galinha.png")                   
-carAzul = pygame.image.load("assets/carroAzul.png")   
+carAzul = pygame.image.load("assets/carroAzul.png") 
+carAzul2 = pygame.image.load("assets/carroRoxo.png")
+carAzul3 = pygame.image.load("assets/carroAzul.png")
+carAzul4 = pygame.image.load("assets/carroAzul.png")
+carAzul5 = pygame.image.load("assets/carroRoxo.png")
+carAzul6 = pygame.image.load("assets/carroAzul.png")  
 
 limparTela()
 nome = lerTexto("DIGITE O SEU NOME: ")
@@ -52,6 +57,31 @@ def jogar():
     posicaoCarX = 1000
     posicaoCarY = -203
     velocidadeCar = 15
+    larguraCar2 = 203                                                      
+    alturaCar2 = 94      
+    posicaoCarX2 = 400
+    posicaoCarY2 = -203
+    velocidadeCar2 = 15
+    larguraCar3 = 203                                                       
+    alturacar3 = 94                                                         
+    posicaoCarX3 = 1400                                                    
+    posicaoCarY3 = -203                                                     
+    velocidadeCar3 = 15
+    larguraCar4 = 203                                                       
+    alturaCar4 = 94                                                         
+    posicaoCarX4 = 2000                                                     
+    posicaoCarY4 = -203                                                     
+    velocidadeCar4 = 15 
+    larguraCar5 = 203                                                       
+    alturaCar5 = 94                                                         
+    posicaoCarX5 = 600                                                 
+    posicaoCarY5 = -203                                                     
+    velocidadeCar5 = 15
+    larguraCar6 = 203                                                       
+    alturaCar6 = 94                                                         
+    posicaoCarX6 = 100                                                     
+    posicaoCarY6 = -203                                                     
+    velocidadeCar6 = 15   
 
                    
     pontos = 0
