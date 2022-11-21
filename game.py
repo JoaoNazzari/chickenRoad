@@ -123,6 +123,41 @@ def jogar():
             else:
                 posicaoCarX =posicaoCarX + velocidadeCar
 
+            if posicaoCarX2 > largura:
+                posicaoCarX2 = -203
+                posicaoCarY2 = 760
+                pygame.mixer.Sound.play(carSound)
+            else:
+                posicaoCarX2 =posicaoCarX2 + velocidadeCar2
+
+            if posicaoCarX3 > largura:
+                posicaoCarX3 = -203
+                posicaoCarY3 = 550
+                pygame.mixer.Sound.play(carSound)
+            else:
+                posicaoCarX3 =posicaoCarX3 + velocidadeCar3
+
+            if posicaoCarX4 > largura:
+                posicaoCarX4 = -203
+                posicaoCarY4 = 450
+                pygame.mixer.Sound.play(carSound)
+            else:
+                posicaoCarX4 =posicaoCarX4 + velocidadeCar4
+            
+            if posicaoCarX5 > largura:
+                posicaoCarX5 = -203
+                posicaoCarY5 = 340
+                pygame.mixer.Sound.play(carSound)
+            else:
+                posicaoCarX5 =posicaoCarX5 + velocidadeCar5
+
+            if posicaoCarX6 > largura:
+                posicaoCarX6 = -203
+                posicaoCarY6 = 240
+                pygame.mixer.Sound.play(carSound)
+            else:
+                posicaoCarX6 =posicaoCarX6 + velocidadeCar6
+
         if galinhaX + movimentoGalinhaX + larguraGalinha < largura and galinhaX + movimentoGalinhaX > 0:
                 galinhaX = galinhaX + movimentoGalinhaX
 
